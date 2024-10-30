@@ -1,48 +1,59 @@
-# **Thema:** Erstellen einer ToDo-Applikation mit Markdown, Git, GitHub und Docker
+# Installation des Projekts
+## clonen eines Repositorys
 
-In dieser Abschlussaufgabe werden alle erlernten Fähigkeiten in den Bereichen **Markdown**, **Git**, **GitHub** und **Docker** kombiniert. Die Aufgabe besteht darin, eine ToDo-Applikation zu erstellen und diese in einem Docker-Container bereitzustellen.
 
-### **Aufgabenstellung:**
+1. Navigieren Sie auf GitHub zur Hauptseite des Repositorys.
 
-1. **GitHub-Fork erstellen:**
-   - Erstelle einen **Fork** des folgenden GitHub-Repositories: [docker-nodejs-sample](https://github.com/ICT-BLJ/docker-nodejs-sample).
-   - Clone deinen Fork lokal auf deinen Computer.
+2. Klicke oberhalb der Liste der Dateien auf
 
-2. **Erstellen einer README-Datei in Markdown:**
-   - Erstelle eine **README.md** Datei im Root-Verzeichnis des Projekts.
-   - Die README soll alle Schritte zur **Installation des Projekts** enthalten. Dazu gehören:
-     - Klonen des Repositories
-     - Installation der notwendigen Pakete
-     - Docker-Konfiguration und -Installation
-     - Starten der Applikation in einem Docker-Container
-   - Nutze [Markdown](https://www.markdownguide.org/cheat-sheet/) für die Struktur und Formatierung der Datei.
+3. Kopiere die URL für das Repository.
+    
+    Um ein Repository über HTTPS zu klonen, klicke unter „HTTPS“. Wenn du das Repository mithilfe eines SSH-Schlüssels klonen möchtest, einschließlich eines Zertifikats, das von der SSH-Zertifizierungsstelle deiner Organisation ausgestellt wurde, wähle SSH und dann
+    Um ein Repository über die GitHub CLI zu klonen, klicke auf GitHub CLI und dann auf
 
-3. **Dokumentation der Vorgehensweise:**
-   - Verfasse eine vollständige **Dokumentation in Word**, in der die Arbeitsschritte beschrieben werden. Diese Schritte sind:
-     - Klonen des Repositories
-     - Einrichtung der Entwicklungsumgebung
-     - Erstellung der README.md
-     - Verwendung von Git (Commit, Push)
-     - Erstellung und Nutzung von Docker-Containern
-   - Verwende die während des Office-Kurses erarbeiteten Kenntnisse für das Erstellen dieses Dokuments.
+4. Öffne Git Bash.
 
-4. **Dockerize das Node.js-Projekt:**
-   - Verfolge die Anleitung unter [docs.docker.com](https://docs.docker.com/guides/language/nodejs/containerize/) ab dem Schritt **"Initialize Docker inits"**.
-   - Dein Ziel ist es, das Projekt in einem Docker-Container lauffähig zu machen, sodass am Ende eine **ToDo-Applikation** in einem Docker-Container bereitsteht.
+5. Ändere das aktuelle Arbeitsverzeichnis zum Speicherort, in dem Du das geklonte Verzeichnis haben willst.
 
-5. **Git-Workflows:**
-   - Arbeite mit **Git**, um Änderungen regelmäßig zu committen und auf GitHub zu pushen.
-   - Verwende sinnvolle Commit-Nachrichten, um deinen Fortschritt zu dokumentieren.
-   - Stelle sicher, dass dein finaler Stand auf GitHub vorhanden ist.
+6. Gib git clone ein, und füge dann die zuvor kopierte URL ein.
 
-6. **Abgabe:**
-   - **Dokumentation:** Lade die erstellte Word-Dokumentation (inkl. Screenshots und Beschreibung der Schritte) in dein Repository hoch.
-   - **GitHub-Link:** Stelle den Link zu deinem GitHub-Repository bereit, das den finalen Stand des Projekts enthält.
+    git clone 'https://github.com/YOUR-USERNAME/YOUR-REPOSITORY'
 
-### **Ziele der Aufgabe:**
-- Anwendung und Vertiefung von Git und GitHub.
-- Verfassen einer strukturierten Anleitung mit Markdown.
-- Containerisieren einer Node.js-Anwendung mit Docker.
-- Dokumentation des gesamten Prozesses in einem Word-Dokument.
-  
-Viel Erfolg bei der Umsetzung!
+    Drücke die EINGABETASTE, um den lokalen Klon zu erstellen.
+>quelle: github.com
+## Notwendiges packet package.json
+
+Ohne dieses Package funktioniert die ToDo liste nicht
+- **`scripts`**:
+  - **`prettify`**: Formatiert alle `.js`-Dateien im Projekt.
+  - **`test`**: Führt Tests im Projekt mit Jest aus.
+  - **`dev`**: Startet den Server im Entwicklungsmodus mit automatischem Neustart und Debugging.
+
+- **`dependencies`**:
+  - **`express`**: Framework für die Erstellung von Webanwendungen und APIs.
+  - **`pg`**: PostgreSQL-Client zur Kommunikation mit einer PostgreSQL-Datenbank.
+  - **`sqlite3`**: SQLite-Datenbank-Modul für eine eingebettete Datenbank.
+  - **`uuid`**: Generiert eindeutige IDs.
+  - **`wait-port`**: Wartet, bis ein bestimmter Port verfügbar ist (z. B. nützlich beim Start von Diensten).
+
+- **`resolutions`**:
+  - **`ansi-regex`**: Erzwingt die Nutzung einer bestimmten Version von `ansi-regex` (5.0.1), um potenzielle Sicherheitsprobleme oder Kompatibilitätsprobleme zu vermeiden.
+
+- **`prettier`**:
+  - **`trailingComma`**: Fügt bei Listen ein Komma am Ende hinzu.
+  - **`tabWidth`**: Setzt die Tab-Breite auf 4 Leerzeichen.
+  - **`useTabs`**: Verwendet Leerzeichen statt Tabs.
+  - **`semi`**: Fügt Semikolons am Ende jeder Anweisung hinzu.
+  - **`singleQuote`**: Verwendet einfache Anführungszeichen für Zeichenketten.
+
+- **`devDependencies`**:
+  - **`jest`**: Test-Framework für automatisierte Tests.
+  - **`nodemon`**: Entwicklertool, das den Server automatisch neu startet bei Dateiänderungen.
+  - **`prettier`**: Code-Formatter für einheitliche Formatierung.
+  >Quelle: Chatgpt.com
+## Docker-Konfiguration und -Installation
+Die installation von Docker ist Ziemlich selbsterklärenden.
+Man wählt auf dieser [Website](https://www.docker.com/get-started/) die Version aus die man herunterladen möchte und ladet die Setup datei herunter nach.
+## Starten einer applikation in einem Dockercontainer
+1. Den Dockercontainer starten und den Port überprüfen
+2. Im browser auf localhost:3000 gehen und los kanns gehen
