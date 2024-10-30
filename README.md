@@ -57,3 +57,5 @@ Man wählt auf dieser [Website](https://www.docker.com/get-started/) die Version
 ## Starten einer applikation in einem Dockercontainer
 1. Den Dockercontainer starten und den Port überprüfen
 2. Im browser auf localhost:3000 gehen und los kanns gehen
+
+jetzt sollte die ToDo Liste erscheinen.
